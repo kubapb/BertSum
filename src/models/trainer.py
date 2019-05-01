@@ -283,6 +283,7 @@ class Trainer(object):
                                     break
 
                             _pred = '<q>'.join(_pred)
+                            _pred = "BEGIN_OF_THE_SENTENCE " + _pred.rstrip()
                             if(self.args.recall_eval):
                                 _pred = ' '.join(_pred.split()[:len(batch.tgt_str[i].split())])
 
